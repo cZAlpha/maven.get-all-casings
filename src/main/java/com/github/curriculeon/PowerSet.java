@@ -1,5 +1,8 @@
 package com.github.curriculeon;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -7,20 +10,30 @@ import java.util.Set;
  */
 public class PowerSet<TypeOfSet> {
 
-    public PowerSet(TypeOfSet[] originalSet) {
+    private final TypeOfSet[] originalInput;
+
+    public PowerSet(TypeOfSet[] originalInput) {
+        this.originalInput = originalInput;
     }
 
     /**
      * @return the powerset of `originalSet`
      */
     public Set<Set<TypeOfSet>> permute() {
-        return null;
+        Set<Set<TypeOfSet>> outerSet = new HashSet<>();
+        Set<TypeOfSet> innerSet = getOriginalSet();
+
+        outerSet.add(innerSet); // One combo
+
+
+
+        return outerSet;
     }
 
     /**
      * @return `originalSet`
      */
     public Set<TypeOfSet> getOriginalSet() {
-        return null;
+        return new LinkedHashSet<>(Arrays.asList(originalInput));
     }
 }

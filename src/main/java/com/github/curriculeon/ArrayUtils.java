@@ -7,6 +7,12 @@ public class ArrayUtils {
      * @return array of integers between `start` and `stop` incrementing by 1
      */
     public static Integer[] getRange(Integer start, Integer end) {
-        return null;
+        Integer[] returnArray = new Integer[end - start + 1];
+
+        for ( int i = 0 ; i < returnArray.length ; i++ ){ // For loop or whatever
+            returnArray[i] = i; // Population of the array
+        }
+
+        return returnArray;
     }
 }
